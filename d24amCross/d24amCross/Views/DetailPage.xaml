@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:d24amCross.Customs;assembly=d24amCross"
+             x:Class="d24amCross.Views.DetailPage"
+             Title="{Binding Title}">
+
+  <ContentPage.Content>
+    <Grid>
+      <ScrollView>
+
+        <Grid  VerticalOptions="Fill" HorizontalOptions="Fill">
+          
+          <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <Grid Grid.Row="0">
+            <Image Source="{Binding ImageSource}" Aspect="AspectFill"/>
+            <Grid VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+              <BoxView Color="Black" Opacity="0.5"/>
+              <Label Text="{Binding Title}" HorizontalTextAlignment="Start" TextColor="White" FontSize="18" Margin="5"/>
+            </Grid>
+          </Grid>
+          
+          <custom:CustomLabel  Grid.Row="2" Text="{Binding Descricao}" FontSize="16" Margin="5"/>
+          
+        </Grid>
+      </ScrollView>
+    </Grid>
+  </ContentPage.Content>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_share_white_24dp.png"           Command="{Binding SharedCommad}" Priority="0" Order="Primary"/>
+    <ToolbarItem Icon="ic_open_in_browser_white_24dp.png" Command="{Binding OpenBrowserCommand}" Priority="1" Order="Primary"/>
+  </ContentPage.ToolbarItems>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behavior="clr-namespace:d24amCross.Behaviros;assembly=d24amCross"
+             x:Class="d24amCross.Views.EsporteTabPage" Title="{Binding TitlePage}">
+  <Grid>
+    <ListView x:Name="FeedList" ItemsSource="{Binding RssList}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
+
+      <ListView.Behaviors>
+        <behavior:FeedListBehavior/>
+      </ListView.Behaviors>
+
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell >
+            <Grid HeightRequest="200">
+              <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
+              <Grid VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,-1">
+                <BoxView Color="Black" Opacity="0.5"/>
+                <Label Text="{Binding Titulo}" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="End" FontSize="18"/>
+              </Grid>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+  </Grid>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:d24amCross.Views;assembly=d24amCross"
+             x:Class="d24amCross.Views.HomeTabbedPage" Title="D24am Feed">
+
+  <NavigationPage Title="Plus">
+    <x:Arguments>
+      <local:PlusTabPage Title="Extra"/>
+    </x:Arguments>
+  </NavigationPage>
+
+  <NavigationPage Title="News">
+    <x:Arguments>
+      <local:HomePage Title="Notícias"/>
+    </x:Arguments>
+  </NavigationPage>
+
+  <NavigationPage Title="Esportes">
+    <x:Arguments>
+      <local:EsporteTabPage Title="Sport"/>
+    </x:Arguments>
+  </NavigationPage>
+
+
+  
+</TabbedPage>
