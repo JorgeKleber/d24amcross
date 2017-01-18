@@ -27,7 +27,7 @@ namespace d24amCross.Views
 
             Detail = new HomePage()
             {
-                Title = "Tutor Inteligente"
+                Title = "Home Page"
             };
 
             NavigateAsync( MenuIndex.Home );
