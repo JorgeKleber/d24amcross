@@ -19,6 +19,8 @@ namespace d24amCross.ViewModel
 
         private Controle controle;
 
+        private bool status;
+
         public ObservableCollection<ItemRss> Lista
         {
             get
@@ -33,6 +35,20 @@ namespace d24amCross.ViewModel
         }
 
         public ICommand ReloadCommand { get; set; }
+
+        public bool Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+                Notify( "Status" );
+            }
+        }
 
         public HomeViewModel()
         {
@@ -54,19 +70,22 @@ namespace d24amCross.ViewModel
             {
                 try
                 {
-                    var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
-
-                    Lista = item;
+                    using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
+                    {
+                        var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
+                        //var item = await controle.BaixarFeed( "http://www.portaldoholanda.com.br/rss" );
+                        Lista = item;
+                    }
                 }
                 catch ( Exception )
                 {
-                    controle.MensagemInfo("Problemas com a conexão");
+                    controle.MensagemInfo( "Problemas com a conexão" );
                 }
 
             }
             else
             {
-                controle.MensagemInfo("Seu dispositivo não está conectado à internet :(");
+                controle.MensagemInfo( "Seu dispositivo não está conectado à internet :(" );
             }
         }
     }

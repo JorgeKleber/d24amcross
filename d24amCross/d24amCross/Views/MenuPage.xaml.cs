@@ -26,11 +26,11 @@ namespace d24amCross.Views
 
             List<MenuModel> menuItems = new List<MenuModel>
                 {
-                    new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,       IconeSrc = "ic_home.png",    },
-                    new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Apoio,      IconeSrc = "ic_consulta.png",},
-                    new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Desempenho, IconeSrc = "ic_combos.png",  },
-                    new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Simulado,   IconeSrc = "ic_list.png",    },
-                    new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,      IconeSrc = "ic_info.png",    },
+                    new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,       IconeSrc = "noticia.png",    },
+                    new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Eportes,      IconeSrc = "sports.png",},
+                    new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Plus, IconeSrc = "plus.png",  },
+                    new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia,   IconeSrc = "folha.png",    },
+                    new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,      IconeSrc = "sobre.png",    },
                 };
 
             ListViewMenu.ItemsSource = menuItems;

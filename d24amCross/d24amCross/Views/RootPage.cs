@@ -46,17 +46,17 @@ namespace d24amCross.Views
                         Views.Add( id, new ControlNavigationApp( new HomePage() ) );
 
                         break;
-                    case MenuIndex.Apoio:
+                    case MenuIndex.Eportes:
 
-                        Views.Add( id, new ControlNavigationApp( new HomePage() ) );
-
-                        break;
-                    case MenuIndex.Desempenho:
-
-                        Views.Add( id, new ControlNavigationApp( new HomePage() ) );
+                        Views.Add( id, new ControlNavigationApp( new EsporteTabPage() ) );
 
                         break;
-                    case MenuIndex.Simulado:
+                    case MenuIndex.Plus:
+
+                        Views.Add( id, new ControlNavigationApp( new PlusTabPage() ) );
+
+                        break;
+                    case MenuIndex.Amazonia:
 
                         Views.Add( id, new ControlNavigationApp( new HomePage() ) );
 

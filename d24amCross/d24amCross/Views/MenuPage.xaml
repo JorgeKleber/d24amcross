@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="d24amCross.Views.MenuPage" Title="Menu" BackgroundColor="#0d0d0d">
 
-  <ListView x:Name="ListViewMenu" RowHeight="50" SeparatorColor="White" SeparatorVisibility="Default">
+  <ListView x:Name="ListViewMenu" RowHeight="50" SeparatorColor="White" SeparatorVisibility="None">
     <ListView.Header>
       <Grid Padding="0,0,0,20">
         <Grid.ColumnDefinitions>
@@ -52,13 +52,11 @@
         <ViewCell>
           <Grid Padding="0,0,0,13" HorizontalOptions="Fill">
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="15"/>
+              <ColumnDefinition Width="50"/>
               <ColumnDefinition Width="50*" />
-              <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
-            <BoxView Color="{Binding ColorItem}" WidthRequest="7" Grid.Column="0"/>
+            <Image Source="{Binding IconeSrc}" WidthRequest="25" VerticalOptions="Center" Grid.Column="0"/>
             <Label Grid.Column="1" Text="{Binding Opcao}" VerticalTextAlignment="Center" VerticalOptions="Center" Label.TextColor="White" FontSize="25"/>
-            <Label Grid.Column="2" Text=">" VerticalOptions="Start" VerticalTextAlignment="Center" Label.TextColor="White" FontSize="25"/>
           </Grid>
         </ViewCell>
       </DataTemplate>

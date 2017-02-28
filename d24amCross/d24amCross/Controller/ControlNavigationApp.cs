@@ -21,7 +21,7 @@ namespace d24amCross.Controller
 
         void Init()
         {
-            BarBackgroundColor = Color.FromHex( "#0d0d0d" );
+            //BarBackgroundColor = Color.FromHex( "#0d0d0d" );
             //BarTextColor = Color.White;
         }
     }

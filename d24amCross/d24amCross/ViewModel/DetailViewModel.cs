@@ -72,7 +72,7 @@ namespace d24amCross.ViewModel
 
             this.ImageSource = feedData.Imagem;
             Title = feedData.Titulo;
-            Descricao = feedData.Descricao;
+            Descricao = "<html>" + "<body style=\"text-align: justify;\">" + feedData.Descricao + "</body>" + "</html>";
             link = feedData.Link;
         }
 

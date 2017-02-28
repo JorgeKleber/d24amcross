@@ -9,9 +9,9 @@ namespace d24amCross.Model
     public enum MenuIndex
     {
         Home,
-        Apoio,
-        Desempenho,
-        Simulado,
+        Eportes,
+        Plus,
+        Amazonia,
         Sobre
     }
 

@@ -10,11 +10,14 @@ using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Acr.UserDialogs;
+using System.Threading;
 
 namespace d24amCross.Controller
 {
     public class Controle
     {
+        CancellationTokenSource cts;
+
         /// <summary>
         /// Função que exite uma mensagem para o usuário.
         /// </summary>
@@ -30,50 +33,53 @@ namespace d24amCross.Controller
 
             client.DefaultRequestHeaders.Add( "User-Agent", "Other" );
 
-           
-                var response = await client.GetAsync( url );
-                var content = await response.Content.ReadAsStringAsync();
 
+            HttpResponseMessage response;
 
-                XElement xmlitems = XElement.Parse( content );
+            response = await client.GetAsync( url );
 
-                List<XElement> elements = xmlitems.Descendants( "item" ).ToList();
+            var content = await response.Content.ReadAsStringAsync();
 
-                var aux = new ObservableCollection<ItemRss>();
+            XElement xmlitems = XElement.Parse( content );
 
-                foreach ( XElement rssItem in elements )
+            List<XElement> elements = xmlitems.Descendants( "item" ).ToList();
+
+            var aux = new ObservableCollection<ItemRss>();
+
+            foreach ( XElement rssItem in elements )
+            {
+                var rss = new ItemRss();
+
+                rss.Descricao = rssItem.Element( "description" ).Value;
+                rss.Link = rssItem.Element( "link" ).Value;
+                rss.Titulo = rssItem.Element( "title" ).Value;
+                rss.Data = rssItem.Element( "pubDate" ).Value.Remove(17);
+                string url2 = rssItem.Element( "enclosure" ) != null ? rssItem.Element( "enclosure" ).ToString() : "empty";
+
+                var reg = new Regex( "url=(?:\"|\')?(?<imgSrc>[^>]*[^/].(?:jpg|bmp|gif|png))(?:\"|\')?" );
+
+                var match = reg.Match( url2 );
+
+                if ( match.Success )
                 {
-                    var rss = new ItemRss();
+                    var encod = match.Groups["imgSrc"].Value;
 
-                    rss.Descricao = rssItem.Element( "description" ).Value;
-                    rss.Link = rssItem.Element( "link" ).Value;
-                    rss.Titulo = rssItem.Element( "title" ).Value;
-                    string url2 = rssItem.Element( "enclosure" ) != null ? rssItem.Element( "enclosure" ).ToString() : "empty";
-
-                    var reg = new Regex( "url=(?:\"|\')?(?<imgSrc>[^>]*[^/].(?:jpg|bmp|gif|png))(?:\"|\')?" );
-
-                    var match = reg.Match( url2 );
-
-                    if ( match.Success )
+                    rss.Imagem = encod;
+                }
+                else
+                {
+                    if ( Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows )
                     {
-                        var encod = match.Groups["imgSrc"].Value;
-
-                        rss.Imagem = encod;
+                        rss.Imagem = "/d24amLogo.jpg";
                     }
                     else
                     {
-                        if ( Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows )
-                        {
-                            rss.Imagem = "/d24amLogo.jpg";
-                        }
-                        else
-                        {
-                            rss.Imagem = "d24amLogo.jpg";
-                        }
+                        rss.Imagem = "d24amLogo.jpg";
                     }
-
-                    aux.Add( rss );
                 }
+
+                aux.Add( rss );
+            }
             return aux;
         }
     }

@@ -17,5 +17,7 @@ namespace d24amCross.Model
         public string Imagem { get; set; }
 
         public string Categoria { get; set; }
+
+        public string Data { get; set; }
     }
 }

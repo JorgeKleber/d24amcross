@@ -12,7 +12,7 @@
 
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="10">
               <Image Source="{Binding Imagem}" Aspect="AspectFill" />
-              <Label Text="{Binding Titulo}" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontSize="18"/>
+              <Label Text="{Binding Titulo}" HorizontalTextAlignment="End" FontFamily="Raleway-Regular" VerticalTextAlignment="End" FontSize="18"/>
             </StackLayout>
 
           </ViewCell>
