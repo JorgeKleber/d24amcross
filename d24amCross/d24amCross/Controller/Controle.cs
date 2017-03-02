@@ -16,7 +16,7 @@ namespace d24amCross.Controller
 {
     public class Controle
     {
-        CancellationTokenSource cts;
+        //CancellationTokenSource cts;
 
         /// <summary>
         /// Função que exite uma mensagem para o usuário.
@@ -70,7 +70,7 @@ namespace d24amCross.Controller
                 {
                     if ( Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows )
                     {
-                        rss.Imagem = "/d24amLogo.jpg";
+                        rss.Imagem = "ms-appx://d24amLogo.jpg";
                     }
                     else
                     {

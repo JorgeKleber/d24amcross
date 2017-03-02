@@ -21,6 +21,8 @@ namespace d24amCross.ViewModel
 
         private bool status;
 
+        private string titlePage;
+
         public ObservableCollection<ItemRss> Lista
         {
             get
@@ -50,8 +52,24 @@ namespace d24amCross.ViewModel
             }
         }
 
+        public string TitlePage
+        {
+            get
+            {
+                return titlePage;
+            }
+
+            set
+            {
+                titlePage = value;
+                Notify( "TitlePage" );
+            }
+        }
+
         public HomeViewModel()
         {
+            TitlePage = "D24am Feed";
+
             controle = new Controle();
 
             Feed();
@@ -73,7 +91,7 @@ namespace d24amCross.ViewModel
                     using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
                     {
                         var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
-                        //var item = await controle.BaixarFeed( "http://www.portaldoholanda.com.br/rss" );
+
                         Lista = item;
                     }
                 }

@@ -48,6 +48,7 @@ namespace d24amCross.ViewModel
         public EsporteViewModel()
         {
             TitlePage = "D24am Feed";
+
             Feed();
         }
 
@@ -55,7 +56,10 @@ namespace d24amCross.ViewModel
         {
             controle = new Controle();
 
-            RssList = await controle.BaixarFeed( "http://new.d24am.com/rss?section=3" );
+            using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
+            {
+                RssList = await controle.BaixarFeed( "http://new.d24am.com/rss?section=3" );
+            }
         }
     }
 }

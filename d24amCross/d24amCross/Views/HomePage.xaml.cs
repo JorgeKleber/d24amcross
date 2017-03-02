@@ -21,13 +21,6 @@ namespace d24amCross.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-
-            if ( BindingContext == null )
-            {
-                this.Title = "teste título";
-                BindingContext = new PlusViewModel(); 
-            }
         }
 
         protected override void OnDisappearing()

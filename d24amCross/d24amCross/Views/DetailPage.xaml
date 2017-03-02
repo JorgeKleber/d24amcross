@@ -14,7 +14,7 @@
           <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
 
           <Grid Grid.Row="0">
@@ -25,7 +25,7 @@
             </Grid>
           </Grid>
           
-          <custom:CustomLabel  Grid.Row="2" Text="{Binding Descricao}" FontSize="16" Margin="5" />
+          <custom:CustomLabel  Grid.Row="2" Text="{Binding Descricao}" FontSize="16" Margin="5,5,5,50" />
           
         </Grid>
       </ScrollView>
