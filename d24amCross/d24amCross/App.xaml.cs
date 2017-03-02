@@ -18,7 +18,7 @@ namespace d24amCross
                 var tabPage = new TabbedPage();
 
                 tabPage.Title = "App do Kleber";
-
+                
                 tabPage.Children.Add( new NavigationPage( new HomePage() ) { Title = "News" } );
                 tabPage.Children.Add( new NavigationPage( new EsporteTabPage() ) { Title = "Esporte" } );
                 tabPage.Children.Add( new NavigationPage( new PlusTabPage() ) { Title = "Plus" } );

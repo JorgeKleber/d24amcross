@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace d24amCross.Views
@@ -14,6 +13,11 @@ namespace d24amCross.Views
         public HomePage()
         {
             InitializeComponent();
+
+            if ( Device.OS == TargetPlatform.Windows )
+            {
+                FeedList.Margin = new Thickness( 0, 10, 0, 0 );
+            }
 
             BindingContext = new HomeViewModel();
         }

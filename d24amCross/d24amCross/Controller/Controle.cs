@@ -56,7 +56,7 @@ namespace d24amCross.Controller
                 rss.Data = rssItem.Element( "pubDate" ).Value.Remove(17);
                 string url2 = rssItem.Element( "enclosure" ) != null ? rssItem.Element( "enclosure" ).ToString() : "empty";
 
-                var reg = new Regex( "url=(?:\"|\')?(?<imgSrc>[^>]*[^/].(?:jpg|bmp|gif|png))(?:\"|\')?" );
+                var reg = new Regex( "url=(?:\"|\')?(?<imgSrc>[^>]*[^/].(?:JPG|jpg|bmp|gif|png))(?:\"|\')?" );
 
                 var match = reg.Match( url2 );
 
