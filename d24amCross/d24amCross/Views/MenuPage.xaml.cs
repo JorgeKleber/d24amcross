@@ -24,14 +24,30 @@ namespace d24amCross.Views
 
             this.main = main;
 
-            List<MenuModel> menuItems = new List<MenuModel>
+            List<MenuModel> menuItems;
+
+            if ( Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS )
+            {
+                menuItems = new List<MenuModel>
                 {
-                    new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,       IconeSrc = "noticia.png",    },
-                    new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Eportes,      IconeSrc = "sports.png",},
-                    new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Plus, IconeSrc = "plus.png",  },
-                    new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia,   IconeSrc = "folha.png",    },
-                    new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,      IconeSrc = "sobre.png",    },
+                    new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,     IconeSrc = "noticia.png"    },
+                    new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Eportes,  IconeSrc = "sports.png",},
+                    new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Plus,     IconeSrc = "plus.png",  },
+                    new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia, IconeSrc = "folha.png",    },
+                    new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,    IconeSrc = "sobre.png",    },
+                }; 
+            }
+            else
+            {
+                menuItems = new List<MenuModel>
+                {
+                    new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,     IconeSrc = "ms-appx:///Imagens/noticia.png" },
+                    new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Eportes,  IconeSrc = "ms-appx:///Imagens/sports.png", },
+                    new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Plus,     IconeSrc = "ms-appx:///Imagens/plus.png",   },
+                    new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia, IconeSrc = "ms-appx:///Imagens/folha.png",  },
+                    new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,    IconeSrc = "ms-appx:///Imagens/sobre.png",  },
                 };
+            }
 
             ListViewMenu.ItemsSource = menuItems;
 

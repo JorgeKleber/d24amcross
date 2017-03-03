@@ -9,22 +9,22 @@ namespace d24amCross
         {
             InitializeComponent();
 
-            if ( Device.OS == TargetPlatform.Android )
-            {
+            //if ( Device.OS == TargetPlatform.Android )
+            //{
                 MainPage = new RootPage();
-            }
-            else if ( Device.OS == TargetPlatform.Windows)
-            {
-                var tabPage = new TabbedPage();
+            //}
+            //else if ( Device.OS == TargetPlatform.Windows)
+            //{
+            //    var tabPage = new TabbedPage();
 
-                tabPage.Title = "App do Kleber";
+            //    tabPage.Title = "App do Kleber";
                 
-                tabPage.Children.Add( new NavigationPage( new HomePage() ) { Title = "News" } );
-                tabPage.Children.Add( new NavigationPage( new EsporteTabPage() ) { Title = "Esporte" } );
-                tabPage.Children.Add( new NavigationPage( new PlusTabPage() ) { Title = "Plus" } );
+            //    tabPage.Children.Add( new NavigationPage( new HomePage() ) { Title = "News" } );
+            //    tabPage.Children.Add( new NavigationPage( new EsporteTabPage() ) { Title = "Esporte" } );
+            //    tabPage.Children.Add( new NavigationPage( new PlusTabPage() ) { Title = "Plus" } );
 
-                MainPage = tabPage;
-            }
+            //    MainPage = tabPage;
+            //}
         }
 
         protected override void OnStart()

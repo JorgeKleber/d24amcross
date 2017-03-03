@@ -14,10 +14,10 @@ namespace d24amCross.Views
         {
             InitializeComponent();
 
-            if ( Device.OS == TargetPlatform.Windows )
-            {
-                FeedList.Margin = new Thickness( 0, 10, 0, 0 );
-            }
+            //if ( Device.OS == TargetPlatform.Windows )
+            //{
+            //    FeedList.Margin = new Thickness( 0, 10, 0, 0 );
+            //}
 
             BindingContext = new HomeViewModel();
         }

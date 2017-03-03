@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behavior="clr-namespace:d24amCross.Behaviros;assembly=d24amCross"
-             x:Class="d24amCross.Views.EsporteTabPage" Title="{Binding TitlePage}">
+             x:Class="d24amCross.Views.EsporteTabPage" Title="D24am - Esportes">
   <Grid>
     <ListView x:Name="FeedList" ItemsSource="{Binding RssList}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
 
@@ -13,12 +13,29 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell >
-            <Grid HeightRequest="200">
+            <!--<Grid HeightRequest="200">
               <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
               <Grid VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,-1">
                 <BoxView Color="Black" Opacity="0.5"/>
                 <Label Text="{Binding Titulo}" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="End" FontSize="18"/>
               </Grid>
+            </Grid>-->
+            <Grid HeightRequest="200" Margin="0,0,0,1">
+              <!--incluir imagem em um container pois devido a um bug a imagem posiciona-se a frente dos outros controles quando renderizada na tela-->
+              <Grid>
+                <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
+              </Grid>
+              <BoxView Color="Black" Opacity="0.5"/>
+              <Label Text="{Binding Data}" TextColor="White" VerticalOptions="EndAndExpand" Margin="10,0,10,10" HorizontalOptions="End" FontSize="16"/>
+
+              <Label Text="{Binding Titulo}"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="StartAndExpand"
+                     FontAttributes="Bold"
+                     HorizontalTextAlignment="Start"
+                     TextColor="White"
+                     VerticalTextAlignment="Center"
+                     FontSize="20"/>
             </Grid>
           </ViewCell>
         </DataTemplate>

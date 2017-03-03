@@ -33,7 +33,7 @@
   </ContentPage.Content>
 
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="ic_share_white_24dp.png"           Command="{Binding SharedCommad}"       Priority="0" Order="Primary"/>
-    <ToolbarItem Icon="ic_open_in_browser_white_24dp.png" Command="{Binding OpenBrowserCommand}" Priority="1" Order="Primary"/>
+    <ToolbarItem Icon="ic_share_white_24dp.png"           Name="Compartilhar" Command="{Binding SharedCommad}"       Priority="0" Order="Primary"/>
+    <ToolbarItem Icon="ic_open_in_browser_white_24dp.png" Name="Browser" Command="{Binding OpenBrowserCommand}" Priority="1" Order="Primary"/>
   </ContentPage.ToolbarItems>
 </ContentPage>

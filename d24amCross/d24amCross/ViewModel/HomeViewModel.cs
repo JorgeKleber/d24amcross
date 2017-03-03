@@ -88,12 +88,12 @@ namespace d24amCross.ViewModel
             {
                 try
                 {
-                    using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
-                    {
+                    //using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
+                    //{
                         var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
 
                         Lista = item;
-                    }
+                    //}
                 }
                 catch ( Exception )
                 {

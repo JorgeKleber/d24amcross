@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behavior="clr-namespace:d24amCross.Behaviros;assembly=d24amCross"
              xmlns:fonte="clr-namespace:d24amCross.Customs;assembly=d24amCross"
-             x:Class="d24amCross.Views.HomePage" Title="Notícias" >
+             x:Class="d24amCross.Views.HomePage" Title="D24am - Notícias" >
 
   <Grid>
     <ListView x:Name="FeedList" ItemsSource="{Binding Lista}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
@@ -25,7 +25,7 @@
                 <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
               </Grid>
               <BoxView Color="Black" Opacity="0.5"/>
-              <Label Text="{Binding Data}" TextColor="White" VerticalOptions="EndAndExpand" Margin="10,0,10,10" HorizontalOptions="End" FontSize="20"/>
+              <Label Text="{Binding Data}" TextColor="White" VerticalOptions="EndAndExpand" Margin="10,0,10,10" HorizontalOptions="End" FontSize="16"/>
 
               <Label Text="{Binding Titulo}"
                      VerticalOptions="CenterAndExpand"
@@ -34,7 +34,7 @@
                      HorizontalTextAlignment="Start"
                      TextColor="White"
                      VerticalTextAlignment="Center"
-                     FontSize="16"/>
+                     FontSize="20"/>
             </Grid>
           </ViewCell>
         </DataTemplate>
