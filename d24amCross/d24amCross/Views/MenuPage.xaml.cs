@@ -35,7 +35,9 @@ namespace d24amCross.Views
                     new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Plus,     IconeSrc = "plus.png",  },
                     new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia, IconeSrc = "folha.png",    },
                     new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,    IconeSrc = "sobre.png",    },
-                }; 
+                };
+
+                //this.ImagemLogo.Source = ImageSource.FromFile( "d24amLogo.jpg" );
             }
             else
             {
@@ -47,6 +49,8 @@ namespace d24amCross.Views
                     new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia, IconeSrc = "ms-appx:///Imagens/folha.png",  },
                     new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,    IconeSrc = "ms-appx:///Imagens/sobre.png",  },
                 };
+
+                //this.ImagemLogo.Source = ImageSource.FromFile( "ms-appx:///d24amLogo.jpg" );
             }
 
             ListViewMenu.ItemsSource = menuItems;

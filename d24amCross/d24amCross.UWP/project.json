@@ -4,7 +4,7 @@
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "Plugin.Share": "4.0.3",
     "Xam.Plugin.Connectivity": "2.2.12",
-    "Xamarin.Forms": "2.3.2.127"
+    "Xamarin.Forms": "2.3.3.180"
   },
   "frameworks": {
     "uap10.0": {}

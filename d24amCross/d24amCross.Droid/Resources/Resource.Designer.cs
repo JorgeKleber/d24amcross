@@ -2325,8 +2325,8 @@ namespace d24amCross.Droid
 			// aapt resource value: 0x7f0200a9
 			public const int noticia = 2130837673;
 			
-			// aapt resource value: 0x7f0200b0
-			public const int notification_template_icon_bg = 2130837680;
+			// aapt resource value: 0x7f0200b1
+			public const int notification_template_icon_bg = 2130837681;
 			
 			// aapt resource value: 0x7f0200aa
 			public const int plus = 2130837674;
@@ -2345,6 +2345,9 @@ namespace d24amCross.Droid
 			
 			// aapt resource value: 0x7f0200af
 			public const int sports = 2130837679;
+			
+			// aapt resource value: 0x7f0200b0
+			public const int today = 2130837680;
 			
 			static Drawable()
 			{

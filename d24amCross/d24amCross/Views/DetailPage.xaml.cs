@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 
 namespace d24amCross.Views
 {
@@ -22,6 +24,7 @@ namespace d24amCross.Views
             this.item = item;
 
             BindingContext = new DetailViewModel(item);
+
 
         }
 

@@ -7,11 +7,6 @@
 
   <Grid>
     <ListView x:Name="FeedList" ItemsSource="{Binding Lista}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
-      <!--<OnPlatform  x:TypeArguments="Thickness"
-                  iOS="0,0,0,0"
-                  Android="0,0,0,0"
-                  WinPhone="0,10,0,0"/>-->
-
       <ListView.Behaviors>
         <behavior:FeedListBehavior/>
       </ListView.Behaviors>
@@ -20,21 +15,17 @@
         <DataTemplate>
           <ViewCell >
             <Grid HeightRequest="200" Margin="0,0,0,1">
-              <!--incluir imagem em um container pois devido a um bug a imagem posiciona-se a frente dos outros controles quando renderizada na tela-->
               <Grid>
                 <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
               </Grid>
               <BoxView Color="Black" Opacity="0.5"/>
-              <Label Text="{Binding Data}" TextColor="White" VerticalOptions="EndAndExpand" Margin="10,0,10,10" HorizontalOptions="End" FontSize="16"/>
+              <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="5,0,0,10" >
+                <Image Source="today.png" VerticalOptions="Center" />
+                <Label Text="{Binding Data}" TextColor="White" VerticalTextAlignment="Center"  FontSize="16"/>
+              </StackLayout>
 
-              <Label Text="{Binding Titulo}"
-                     VerticalOptions="CenterAndExpand"
-                     HorizontalOptions="StartAndExpand"
-                     FontAttributes="Bold"
-                     HorizontalTextAlignment="Start"
-                     TextColor="White"
-                     VerticalTextAlignment="Center"
-                     FontSize="20"/>
+              <Label Text="{Binding Titulo}" Margin="10,0,0,0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Start" TextColor="White" VerticalTextAlignment="Center" FontSize="20"/>
+
             </Grid>
           </ViewCell>
         </DataTemplate>

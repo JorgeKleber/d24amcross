@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -111,11 +111,11 @@
   <ItemGroup>
     <Content Include="Assets\d24amLogo.jpg" />
     <AndroidResource Include="d24amLogo.jpg" />
-    <AndroidResource Include="Imagens\folha.png" />
-    <AndroidResource Include="Imagens\noticia.png" />
-    <AndroidResource Include="Imagens\plus.png" />
-    <AndroidResource Include="Imagens\sobre.png" />
-    <AndroidResource Include="Imagens\sports.png" />
+    <AndroidResource Include="folha.png" />
+    <AndroidResource Include="noticia.png" />
+    <AndroidResource Include="plus.png" />
+    <AndroidResource Include="sobre.png" />
+    <AndroidResource Include="sports.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
