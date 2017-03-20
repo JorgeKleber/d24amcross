@@ -1,28 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="d24amCross.Views.MenuPage" Title="Menu" BackgroundColor="#F44336">
+             x:Class="d24amCross.Views.MenuPage" Title="Menu">
 
-  <ListView x:Name="ListViewMenu" RowHeight="50" SeparatorColor="White" SeparatorVisibility="None">
-    <ListView.Header>
-      <Grid Padding="0,0,0,20">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="10"/>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
+    <!--BackgroundColor="#F44336"-->
+    <ListView x:Name="ListViewMenu" RowHeight="50" SeparatorColor="White" SeparatorVisibility="None">
+        <ListView.Header>
+            <Grid Padding="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-          <RowDefinition Height="50"/>
-          <RowDefinition Height="Auto"/>
-          <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
 
-        <!--<BoxView Grid.ColumnSpan="3"
+                <!--<BoxView Grid.ColumnSpan="3"
                  Grid.RowSpan="4"
                  BackgroundColor="#03A9F4"/>-->
 
-        <!--<controls:CircleImage
+                <!--<controls:CircleImage
             Grid.Column="1"
             Grid.Row="1"
             HorizontalOptions="Start"
@@ -30,36 +31,34 @@
             Source="ic_logo.png"
             WidthRequest="75" HeightRequest="75"/>-->
 
-        <Label
+                <Label
             Grid.Column="1"
             Grid.Row="2"
             Text="D24am"
-            Label.TextColor="White"
             FontSize="16"/>
 
-        <Label
+                <Label
             Grid.Column="1"
             Grid.Row="3"
             Text="Feed de notícias"
-            Label.TextColor="White"
             FontSize="12"/>
-      </Grid>
-    </ListView.Header>
+            </Grid>
+        </ListView.Header>
 
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <Grid Padding="0,0,0,13" HorizontalOptions="Fill">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="50"/>
-              <ColumnDefinition Width="50*" />
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding IconeSrc}" WidthRequest="25" VerticalOptions="Center" Grid.Column="0"/>
-            <Label Grid.Column="1" Text="{Binding Opcao}" VerticalTextAlignment="Center" VerticalOptions="Center" Label.TextColor="White" FontSize="25"/>
-          </Grid>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="0,0,0,13" HorizontalOptions="Fill">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding IconeSrc}" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0"/>
+                        <Label Grid.Column="1" Text="{Binding Opcao}" VerticalTextAlignment="Center" VerticalOptions="Center" FontSize="25"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>

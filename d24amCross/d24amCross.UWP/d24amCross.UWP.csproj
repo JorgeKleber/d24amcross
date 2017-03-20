@@ -110,12 +110,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\d24amLogo.jpg" />
-    <AndroidResource Include="d24amLogo.jpg" />
-    <AndroidResource Include="folha.png" />
-    <AndroidResource Include="noticia.png" />
-    <AndroidResource Include="plus.png" />
-    <AndroidResource Include="sobre.png" />
-    <AndroidResource Include="sports.png" />
+    <Content Include="d24amLogo.jpg" />
+    <Content Include="folha.png" />
+    <Content Include="ic_open_in_browser_white_24dp.png" />
+    <Content Include="ic_share_white_24dp.png" />
+    <Content Include="noticia.png" />
+    <Content Include="plus.png" />
+    <Content Include="sobre.png" />
+    <Content Include="sports.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

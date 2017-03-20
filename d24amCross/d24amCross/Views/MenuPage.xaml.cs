@@ -26,9 +26,7 @@ namespace d24amCross.Views
 
             List<MenuModel> menuItems;
 
-            if ( Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS )
-            {
-                menuItems = new List<MenuModel>
+            menuItems = new List<MenuModel>
                 {
                     new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,     IconeSrc = "noticia.png"    },
                     new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Eportes,  IconeSrc = "sports.png",},
@@ -37,21 +35,7 @@ namespace d24amCross.Views
                     new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,    IconeSrc = "sobre.png",    },
                 };
 
-                //this.ImagemLogo.Source = ImageSource.FromFile( "d24amLogo.jpg" );
-            }
-            else
-            {
-                menuItems = new List<MenuModel>
-                {
-                    new MenuModel { Opcao = "Notícias",   IndexItem = MenuIndex.Home,     IconeSrc = "ms-appx:///Imagens/noticia.png" },
-                    new MenuModel { Opcao = "Esportes",   IndexItem = MenuIndex.Eportes,  IconeSrc = "ms-appx:///Imagens/sports.png", },
-                    new MenuModel { Opcao = "Plus",       IndexItem = MenuIndex.Plus,     IconeSrc = "ms-appx:///Imagens/plus.png",   },
-                    new MenuModel { Opcao = "Amazônia",   IndexItem = MenuIndex.Amazonia, IconeSrc = "ms-appx:///Imagens/folha.png",  },
-                    new MenuModel { Opcao = "Sobre",      IndexItem = MenuIndex.Sobre,    IconeSrc = "ms-appx:///Imagens/sobre.png",  },
-                };
-
-                //this.ImagemLogo.Source = ImageSource.FromFile( "ms-appx:///d24amLogo.jpg" );
-            }
+            //this.ImagemLogo.Source = ImageSource.FromFile( "d24amLogo.jpg" );
 
             ListViewMenu.ItemsSource = menuItems;
 

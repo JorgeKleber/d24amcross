@@ -13,13 +13,6 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell >
-            <!--<Grid HeightRequest="200">
-              <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
-              <Grid VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,-1">
-                <BoxView Color="Black" Opacity="0.5"/>
-                <Label Text="{Binding Titulo}" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="End" FontSize="18"/>
-              </Grid>
-            </Grid>-->
             <Grid HeightRequest="200" Margin="0,0,0,1">
               <!--incluir imagem em um container pois devido a um bug a imagem posiciona-se a frente dos outros controles quando renderizada na tela-->
               <Grid>
