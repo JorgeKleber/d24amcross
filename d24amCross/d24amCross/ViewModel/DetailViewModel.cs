@@ -97,17 +97,6 @@ namespace d24amCross.ViewModel
 
         public DetailViewModel(ItemRss feedData)
         {
-            //if ( Device.OS == TargetPlatform.Android )
-            //{
-            //    Icon1 = "ic_share_white_24dp.png";
-            //    Icon2 = "ic_open_in_browser_white_24dp.png";
-            //}
-            //else
-            //{
-            //    Icon1 = "Send";
-            //    Icon2 = "Globe";
-            //}
-
             SharedCommad = new Command(SharedLink_Clicked);
             OpenBrowserCommand = new Command(OpenBrowser_Clicked);
 

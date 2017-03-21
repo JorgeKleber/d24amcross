@@ -54,7 +54,7 @@
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
                         <Image Source="{Binding IconeSrc}" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0"/>
-                        <Label Grid.Column="1" Text="{Binding Opcao}" VerticalTextAlignment="Center" VerticalOptions="Center" FontSize="25"/>
+                        <Label Grid.Column="1" Text="{Binding Opcao}" VerticalTextAlignment="Center" VerticalOptions="Center" FontSize="25" TextColor="White"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

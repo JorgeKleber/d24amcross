@@ -33,54 +33,46 @@ namespace d24amCross.Controller
 
             client.DefaultRequestHeaders.Add( "User-Agent", "Other" );
 
-
             HttpResponseMessage response;
 
-            response = await client.GetAsync( url );
+                response = await client.GetAsync( url );
 
-            var content = await response.Content.ReadAsStringAsync();
+                var content = await response.Content.ReadAsStringAsync();
 
-            XElement xmlitems = XElement.Parse( content );
+                XElement xmlitems = XElement.Parse( content );
 
-            List<XElement> elements = xmlitems.Descendants( "item" ).ToList();
+                List<XElement> elements = xmlitems.Descendants( "item" ).ToList();
 
-            var aux = new ObservableCollection<ItemRss>();
+                var aux = new ObservableCollection<ItemRss>();
 
-            foreach ( XElement rssItem in elements )
-            {
-                var rss = new ItemRss();
-
-                rss.Descricao = rssItem.Element( "description" ).Value;
-                rss.Link = rssItem.Element( "link" ).Value;
-                rss.Titulo = rssItem.Element( "title" ).Value;
-                rss.Data = rssItem.Element( "pubDate" ).Value.Remove(17);
-                string url2 = rssItem.Element( "enclosure" ) != null ? rssItem.Element( "enclosure" ).ToString() : "empty";
-
-                var reg = new Regex( "url=(?:\"|\')?(?<imgSrc>[^>]*[^/].(?:JPG|jpg|bmp|gif|png))(?:\"|\')?" );
-
-                var match = reg.Match( url2 );
-
-                if ( match.Success )
+                foreach ( XElement rssItem in elements )
                 {
-                    var encod = match.Groups["imgSrc"].Value;
+                    var rss = new ItemRss();
 
-                    rss.Imagem = encod;
-                }
-                else
-                {
-                    if ( Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows )
+                    rss.Descricao = rssItem.Element( "description" ).Value;
+                    rss.Link = rssItem.Element( "link" ).Value;
+                    rss.Titulo = rssItem.Element( "title" ).Value;
+                    rss.Data = rssItem.Element( "pubDate" ).Value.Remove( 17 );
+                    string url2 = rssItem.Element( "enclosure" ) != null ? rssItem.Element( "enclosure" ).ToString() : "empty";
+
+                    var reg = new Regex( "url=(?:\"|\')?(?<imgSrc>[^>]*[^/].(?:JPG|jpg|bmp|gif|png))(?:\"|\')?" );
+
+                    var match = reg.Match( url2 );
+
+                    if ( match.Success )
                     {
-                        rss.Imagem = "ms-appx://d24amLogo.jpg";
+                        var encod = match.Groups["imgSrc"].Value;
+
+                        rss.Imagem = encod;
                     }
                     else
                     {
                         rss.Imagem = "d24amLogo.jpg";
                     }
-                }
 
-                aux.Add( rss );
-            }
-            return aux;
+                    aux.Add( rss );
+                }
+                return aux;
         }
     }
 }

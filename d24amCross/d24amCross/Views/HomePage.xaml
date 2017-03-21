@@ -5,33 +5,40 @@
              xmlns:fonte="clr-namespace:d24amCross.Customs;assembly=d24amCross"
              x:Class="d24amCross.Views.HomePage" Title="D24am - Notícias" >
 
-  <Grid>
-    <ListView x:Name="FeedList" ItemsSource="{Binding Lista}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
-      <ListView.Behaviors>
-        <behavior:FeedListBehavior/>
-      </ListView.Behaviors>
+    <Grid>
+        <ListView x:Name="FeedList" ItemsSource="{Binding Lista}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
+            <ListView.Behaviors>
+                <behavior:FeedListBehavior/>
+            </ListView.Behaviors>
 
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell >
-            <Grid HeightRequest="200" Margin="0,0,0,1">
-              <Grid>
-                <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
-              </Grid>
-              <BoxView Color="Black" Opacity="0.5"/>
-              <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="5,0,0,10" >
-                <Image Source="today.png" VerticalOptions="Center" />
-                <Label Text="{Binding Data}" TextColor="White" VerticalTextAlignment="Center"  FontSize="16"/>
-              </StackLayout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Grid HeightRequest="200" Margin="0,0,0,1">
+                            <Grid>
+                                <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
+                            </Grid>
+                            <BoxView Color="Black" Opacity="0.5"/>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="5,0,0,10" >
+                                <Image Source="today.png" VerticalOptions="Center" />
+                                <Label Text="{Binding Data}" TextColor="White" VerticalTextAlignment="Center"  FontSize="16"/>
+                            </StackLayout>
 
-              <Label Text="{Binding Titulo}" Margin="10,0,0,0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Start" TextColor="White" VerticalTextAlignment="Center" FontSize="20"/>
+                            <Label Text="{Binding Titulo}" Margin="10,0,0,0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Start" TextColor="White" VerticalTextAlignment="Center" FontSize="20"/>
 
-            </Grid>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-  </Grid>
+        <Grid IsVisible="{Binding Visibility}">
+            <BoxView Color="Black" Opacity="0.5"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <ActivityIndicator Color="Red" IsRunning="True"/>
+                <Label Text="Carregando..." TextColor="White" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
 
 </ContentPage>

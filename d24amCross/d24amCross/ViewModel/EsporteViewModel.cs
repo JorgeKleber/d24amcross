@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace d24amCross.ViewModel
 {
@@ -45,10 +47,37 @@ namespace d24amCross.ViewModel
             }
         }
 
+        public ICommand ReloadCommand { get; set; }
+
+        public bool Visibility
+        {
+            get
+            {
+                return visibility;
+            }
+
+            set
+            {
+                visibility = value;
+                Notify("Visibility");
+            }
+        }
+
+        private bool visibility;
+
         public EsporteViewModel()
         {
+            this.Visibility = true;
+
             TitlePage = "D24am Feed";
 
+            ReloadCommand = new Command( Refresh_Command );
+
+            Feed();
+        }
+
+        private void Refresh_Command( object obj )
+        {
             Feed();
         }
 
@@ -56,10 +85,12 @@ namespace d24amCross.ViewModel
         {
             controle = new Controle();
 
-            using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
-            {
-                RssList = await controle.BaixarFeed( "http://new.d24am.com/rss?section=3" );
-            }
+            this.Visibility = true;
+
+            RssList = await controle.BaixarFeed( "http://new.d24am.com/rss?section=3" );
+
+            this.Visibility = false;
+
         }
     }
 }

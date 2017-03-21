@@ -17,6 +17,8 @@ namespace d24amCross.ViewModel
     {
         private ObservableCollection<ItemRss> lista;
 
+        private bool visibility;
+
         private Controle controle;
 
         private bool status;
@@ -35,8 +37,6 @@ namespace d24amCross.ViewModel
                 Notify( "Lista" );
             }
         }
-
-        public ICommand ReloadCommand { get; set; }
 
         public bool Status
         {
@@ -66,13 +66,33 @@ namespace d24amCross.ViewModel
             }
         }
 
+        public ICommand ReloadCommand { get; set; }
+
+        public bool Visibility
+        {
+            get
+            {
+                return visibility;
+            }
+
+            set
+            {
+                visibility = value;
+                Notify( "Visibility" );
+            }
+        }
+
         public HomeViewModel()
         {
             TitlePage = "D24am Feed";
 
+            this.Visibility = true;
+
             controle = new Controle();
 
             Feed();
+
+            ReloadCommand = new Command( Refresh_Clicked );
         }
 
         private void Refresh_Clicked( object obj )
@@ -88,12 +108,14 @@ namespace d24amCross.ViewModel
             {
                 try
                 {
-                    //using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
-                    //{
-                        var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
+                    this.Visibility = true;
 
-                        Lista = item;
-                    //}
+                    var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
+
+                    Lista = item;
+
+                    this.Visibility = false;
+
                 }
                 catch ( Exception )
                 {

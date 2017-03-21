@@ -14,19 +14,28 @@ namespace d24amCross.Views
         public EsporteTabPage()
         {
             InitializeComponent();
-            
+
+            if ( Device.OS == TargetPlatform.Windows )
+            {
+                var refresh = new ToolbarItem()
+                {
+                    Icon = "ic_refresh.png",
+                    Name = "Atualizar"
+                };
+
+                refresh.SetBinding( ToolbarItem.CommandProperty, new Binding( "ReloadCommand" ) );
+
+                ToolbarItems.Add( refresh );
+
+            }
+
+            this.BindingContext = new EsporteViewModel();
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-
-            if ( BindingContext == null )
-            {
-                BindingContext = new EsporteViewModel(); 
-            }
-
         }
 
         protected override void OnDisappearing()

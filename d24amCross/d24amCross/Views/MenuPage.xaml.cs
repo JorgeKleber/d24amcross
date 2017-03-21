@@ -20,6 +20,11 @@ namespace d24amCross.Views
         {
             InitializeComponent();
 
+            if ( Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS )
+            {
+                this.BackgroundColor = Color.FromHex( "#F44336" ); ;
+            }
+
             controle = new Controle();
 
             this.main = main;

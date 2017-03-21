@@ -14,17 +14,27 @@ namespace d24amCross.Views
         public PlusTabPage()
         {
             InitializeComponent();
+
+            if ( Device.OS == TargetPlatform.Windows )
+            {
+                var refresh = new ToolbarItem()
+                {
+                    Icon = "ic_refresh.png",
+                    Name = "Atualizar"
+                };
+
+                refresh.SetBinding( ToolbarItem.CommandProperty, new Binding( "ReloadCommand" ) );
+
+                ToolbarItems.Add( refresh );
+
+                this.BindingContext = new PlusViewModel();
+
+            }
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-
-            if ( BindingContext == null )
-            {
-                BindingContext = new PlusViewModel(); 
-            }
         }
 
         protected override void OnDisappearing()

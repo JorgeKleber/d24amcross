@@ -39,14 +39,14 @@ namespace d24amCross.Behaviros
         {
             var item = e.Item as ItemRss;
 
-            if ( Device.OS == TargetPlatform.Android )
-            {
+            //if ( Device.OS == TargetPlatform.Android )
+            //{
                 await ( App.Current.MainPage as MasterDetailPage ).Detail.Navigation.PushAsync( new DetailPage( item ), true );
-            }
-            else if ( Device.OS == TargetPlatform.Windows )
-            {
-                await App.Current.MainPage.Navigation.PushModalAsync( new DetailPage( item ), true );
-            }
+            //}
+            //else if ( Device.OS == TargetPlatform.Windows )
+            //{
+            //    await App.Current.MainPage.Navigation.PushModalAsync( new DetailPage( item ), true );
+            //}
         }
 
         protected override void OnDetachingFrom( ListView bindable )
