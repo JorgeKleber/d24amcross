@@ -7,7 +7,7 @@
         <ListView x:Name="FeedList" ItemsSource="{Binding RssList}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
 
             <ListView.Behaviors>
-                <behavior:FeedListBehavior/>
+                <behavior:EsportListBehavior/>
             </ListView.Behaviors>
 
             <ListView.ItemTemplate>
@@ -34,14 +34,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
-        <Grid IsVisible="{Binding Visibility}">
-            <BoxView Color="Black" Opacity="0.5"/>
-            <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                <ActivityIndicator Color="Red" IsRunning="True"/>
-                <Label Text="Carregando..." TextColor="White" HorizontalTextAlignment="Center"/>
-            </StackLayout>
-        </Grid>
-        
     </Grid>
 </ContentPage>

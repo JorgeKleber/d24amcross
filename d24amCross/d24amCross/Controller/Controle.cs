@@ -29,11 +29,13 @@ namespace d24amCross.Controller
 
         public async Task<ObservableCollection<ItemRss>> BaixarFeed( string url )
         {
-            var client = new HttpClient();
+            using ( Acr.UserDialogs.UserDialogs.Instance.Loading( "Carregando feed..." ) )
+            {
+                var client = new HttpClient();
 
-            client.DefaultRequestHeaders.Add( "User-Agent", "Other" );
+                client.DefaultRequestHeaders.Add( "User-Agent", "Other" );
 
-            HttpResponseMessage response;
+                HttpResponseMessage response;
 
                 response = await client.GetAsync( url );
 
@@ -72,7 +74,9 @@ namespace d24amCross.Controller
 
                     aux.Add( rss );
                 }
+
                 return aux;
+            }
         }
     }
 }

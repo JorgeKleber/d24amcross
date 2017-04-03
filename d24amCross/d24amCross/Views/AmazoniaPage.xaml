@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:d24amCross"
              xmlns:behavior="clr-namespace:d24amCross.Behaviros;assembly=d24amCross"
-             xmlns:fonte="clr-namespace:d24amCross.Customs;assembly=d24amCross"
-             x:Class="d24amCross.Views.HomePage" Title="D24am - Notícias" >
+             x:Class="d24amCross.AmazoniaPage">
 
-    <Grid>
+  <Grid>
         <ListView x:Name="FeedList" ItemsSource="{Binding Lista}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
             <ListView.Behaviors>
-                <behavior:FeedListBehavior/>
+                <behavior:AmListBehavior/>
             </ListView.Behaviors>
 
             <ListView.ItemTemplate>
@@ -32,6 +32,13 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <Grid IsVisible="{Binding Visibility}">
+            <BoxView Color="Black" Opacity="0.5"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <ActivityIndicator Color="Red" IsRunning="True"/>
+                <Label Text="Carregando..." TextColor="White" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Grid>
     </Grid>
 
 </ContentPage>

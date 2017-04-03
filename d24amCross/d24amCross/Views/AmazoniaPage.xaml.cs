@@ -1,4 +1,5 @@
-﻿using System;
+﻿using d24amCross.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,13 @@ using Xamarin.Forms;
 
 namespace d24amCross
 {
-    public partial class MainPage : ContentPage
+    public partial class AmazoniaPage : ContentPage
     {
-        public MainPage()
+        public AmazoniaPage()
         {
             InitializeComponent();
+
+            this.BindingContext = new AmazoniaViewModel();
         }
     }
 }

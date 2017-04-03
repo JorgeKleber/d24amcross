@@ -110,11 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\d24amLogo.jpg" />
-    <Content Include="d24amLogo.jpg" />
+    <Content Include="headerbackground.jpg" />
     <Content Include="folha.png" />
     <Content Include="ic_refresh.png" />
     <Content Include="ic_open_in_browser_white_24dp.png" />
     <Content Include="ic_share_white_24dp.png" />
+    <Content Include="logod24am.png" />
     <Content Include="noticia.png" />
     <Content Include="plus.png" />
     <Content Include="sobre.png" />

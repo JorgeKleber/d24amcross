@@ -85,12 +85,7 @@ namespace d24amCross.ViewModel
         {
             controle = new Controle();
 
-            this.Visibility = true;
-
             RssList = await controle.BaixarFeed( "http://new.d24am.com/rss?section=3" );
-
-            this.Visibility = false;
-
         }
     }
 }

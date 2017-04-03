@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using d24amCross.Controller;
+﻿using d24amCross.Controller;
 using d24amCross.Model;
 using Plugin.Connectivity;
 using System;
@@ -13,9 +12,11 @@ using Xamarin.Forms;
 
 namespace d24amCross.ViewModel
 {
-    public class HomeViewModel : ViewModelBase
+    public class AmazoniaViewModel : ViewModelBase
     {
         private ObservableCollection<ItemRss> lista;
+
+        private bool visibility;
 
         private Controle controle;
 
@@ -64,11 +65,27 @@ namespace d24amCross.ViewModel
             }
         }
 
+        public bool Visibility
+        {
+            get
+            {
+                return visibility;
+            }
+
+            set
+            {
+                visibility = value;
+                Notify( "Visibility" );
+            }
+        }
+
         public ICommand ReloadCommand { get; set; }
 
-        public HomeViewModel()
+        private AmazoniaViewModel()
         {
             TitlePage = "D24am Feed";
+
+            this.Visibility = true;
 
             controle = new Controle();
 
@@ -90,9 +107,13 @@ namespace d24amCross.ViewModel
             {
                 try
                 {
-                    var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
+                    this.Visibility = true;
+
+                    var item = await controle.BaixarFeed( "http://new.d24am.com/rss?section=6" );
 
                     Lista = item;
+
+                    this.Visibility = false;
 
                 }
                 catch ( Exception )

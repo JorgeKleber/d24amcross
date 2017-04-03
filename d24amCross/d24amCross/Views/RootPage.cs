@@ -28,9 +28,7 @@ namespace d24amCross.Views
             Detail = new NavigationPage( new HomePage()
             {
                 Title = "Home Page"
-            });
-
-            NavigateAsync( MenuIndex.Home );
+            } );
         }
 
         public void NavigateAsync( MenuIndex id )

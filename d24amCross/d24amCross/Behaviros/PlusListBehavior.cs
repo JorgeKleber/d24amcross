@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using d24amCross.Controller;
+﻿using d24amCross.Controller;
 using d24amCross.Model;
 using d24amCross.Views;
 using System;
@@ -11,7 +10,7 @@ using Xamarin.Forms;
 
 namespace d24amCross.Behaviros
 {
-    public class FeedListBehavior : Behavior<ListView>
+    public class PlusListBehavior : Behavior<ListView>
     {
         ListView Lista;
         protected override void OnAttachedTo( ListView bindable )
@@ -28,7 +27,7 @@ namespace d24amCross.Behaviros
 
             Controle controle = new Controle();
 
-            var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
+            var item = await controle.BaixarFeed( "http://new.d24am.com/rss?section=5" );
 
             Lista.ItemsSource = item;
 
@@ -40,7 +39,6 @@ namespace d24amCross.Behaviros
             var item = e.Item as ItemRss;
 
             await ( App.Current.MainPage as MasterDetailPage ).Detail.Navigation.PushAsync( new DetailPage( item ), true );
-
         }
 
         protected override void OnDetachingFrom( ListView bindable )

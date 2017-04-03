@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using d24amCross.Controller;
+﻿using d24amCross.Controller;
 using d24amCross.Model;
 using d24amCross.Views;
 using System;
@@ -11,7 +10,7 @@ using Xamarin.Forms;
 
 namespace d24amCross.Behaviros
 {
-    public class FeedListBehavior : Behavior<ListView>
+    public class EsportListBehavior : Behavior<ListView>
     {
         ListView Lista;
         protected override void OnAttachedTo( ListView bindable )
@@ -28,7 +27,7 @@ namespace d24amCross.Behaviros
 
             Controle controle = new Controle();
 
-            var item = await controle.BaixarFeed( "http://new.d24am.com/rss" );
+            var item = await controle.BaixarFeed( "http://new.d24am.com/rss?section=3" );
 
             Lista.ItemsSource = item;
 
