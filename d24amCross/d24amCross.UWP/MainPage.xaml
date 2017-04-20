@@ -6,10 +6,9 @@
     xmlns:local="using:d24amCross.UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Style="{StaticResource BackgroundApp}">
+    mc:Ignorable="d">
 
-    <Grid Style="{StaticResource BackgroundGrid}">
+    <Grid>
 
     </Grid>
 </forms:WindowsPage>

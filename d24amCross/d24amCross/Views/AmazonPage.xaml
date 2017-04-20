@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="d24amCross.Views.AmazonPage"
+             xmlns:behavior="clr-namespace:d24amCross.Behaviros"
+             Title="AmazonPage">
+
+    <ListView x:Name="FeedList" ItemsSource="{Binding Lista}" RowHeight="200"  HasUnevenRows="True" SeparatorVisibility="None" IsRefreshing="False" IsPullToRefreshEnabled="True">
+
+        <ListView.Behaviors>
+            <behavior:PlusListBehavior/>
+        </ListView.Behaviors>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell >
+                    <Grid HeightRequest="200" Margin="0,0,0,1">
+                        <!--incluir imagem em um container pois devido a um bug a imagem posiciona-se a frente dos outros controles quando renderizada na tela-->
+                        <Grid>
+                            <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
+                        </Grid>
+                        <BoxView Color="Black" Opacity="0.5"/>
+                        <Label Text="{Binding Data}" TextColor="White" VerticalOptions="EndAndExpand" Margin="10,0,10,10" HorizontalOptions="End" FontSize="16"/>
+                        <Label Text="{Binding Titulo}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Start" TextColor="White" VerticalTextAlignment="Center" FontSize="20"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

@@ -4,13 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:d24amCross.UWP"
     RequestedTheme="Dark">
-    <Application.Resources>
+    <!--<Application.Resources>
         <Style x:Key="BackgroundApp" TargetType="Page">
             <Setter Property="Background" Value="#D32F2F"/>
         </Style>
         <Style x:Key="BackgroundGrid" TargetType="Grid">
             <Setter Property="Background" Value="#F44336"/>
         </Style>
-    </Application.Resources>
+    </Application.Resources>-->
 
 </Application>

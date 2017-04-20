@@ -9,8 +9,12 @@ namespace d24amCross.Controller
 {
     public class ControlNavigationApp : NavigationPage
     {
-        public ControlNavigationApp( Page root ) : base( root )
+        string color;
+
+        public ControlNavigationApp( Page root, string color ) : base( root )
         {
+            this.color = color;
+
             Init();
         }
 
@@ -21,8 +25,8 @@ namespace d24amCross.Controller
 
         void Init()
         {
-            //BarBackgroundColor = Color.FromHex( "#0d0d0d" );
-            //BarTextColor = Color.White;
+            BarBackgroundColor = Color.FromHex( this.color );
+            BarTextColor = Color.White;
         }
     }
 }

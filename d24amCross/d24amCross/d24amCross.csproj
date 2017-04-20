@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Behaviros\AmListBehavior.cs" />
     <Compile Include="Behaviros\EsportListBehavior.cs" />
     <Compile Include="Behaviros\FeedListBehavior.cs" />
     <Compile Include="Behaviros\PlusListBehavior.cs" />
@@ -46,11 +47,15 @@
     <Compile Include="Customs\CustomLabel.cs" />
     <Compile Include="Model\ItemRss.cs" />
     <Compile Include="Model\MenuModel.cs" />
+    <Compile Include="ViewModel\AmazoniaViewModel.cs" />
     <Compile Include="ViewModel\DetailViewModel.cs" />
     <Compile Include="ViewModel\EsporteViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\PlusViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Views\AmazonPage.xaml.cs">
+      <DependentUpon>AmazonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DetailPage.xaml.cs">
       <DependentUpon>DetailPage.xaml</DependentUpon>
     </Compile>
@@ -121,7 +126,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Diagramas\ViewModelDiagrama.cd" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -151,6 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\PlusTabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AmazonPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

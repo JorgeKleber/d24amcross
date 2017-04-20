@@ -16,7 +16,6 @@ namespace d24amCross.Views
         public RootPage()
         {
             Title = "Tutor Inteligente";
-            BackgroundColor = Color.Green;
 
             Views = new Dictionary<MenuIndex, NavigationPage>();
 
@@ -25,10 +24,12 @@ namespace d24amCross.Views
                 Title = "Menu Page"
             };
 
-            Detail = new NavigationPage( new HomePage()
-            {
-                Title = "Home Page"
-            } );
+            //Detail = new NavigationPage( new HomePage()
+            //{
+            //    Title = "Home Page"
+            //} );
+
+            NavigateAsync(MenuIndex.Home);
         }
 
         public void NavigateAsync( MenuIndex id )
@@ -41,26 +42,26 @@ namespace d24amCross.Views
                 {
                     case MenuIndex.Home:
 
-                        Views.Add( id, new ControlNavigationApp( new HomePage() ) );
+                        Views.Add( id, new ControlNavigationApp( new HomePage(), "#c90019" ) );
 
                         break;
                     case MenuIndex.Eportes:
 
-                        Views.Add( id, new ControlNavigationApp( new EsporteTabPage() ) );
+                        Views.Add( id, new ControlNavigationApp( new EsporteTabPage(), "#239bd2") );
 
                         break;
                     case MenuIndex.Plus:
 
-                        Views.Add( id, new ControlNavigationApp( new PlusTabPage() ) );
+                        Views.Add( id, new ControlNavigationApp( new PlusTabPage(), "#e2007a" ) );
 
                         break;
                     case MenuIndex.Amazonia:
 
-                        Views.Add( id, new ControlNavigationApp( new HomePage() ) );
+                        Views.Add( id, new ControlNavigationApp( new AmazonPage(), "#99cc33") );
 
                         break;
                     case MenuIndex.Sobre:
-                        Views.Add( id, new ControlNavigationApp( new HomePage() ) );
+                        Views.Add( id, new ControlNavigationApp( new HomePage(), "#3333ff") );
                         break;
                     default:
                         break;

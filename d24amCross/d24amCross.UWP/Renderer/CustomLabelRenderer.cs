@@ -21,14 +21,16 @@ namespace d24amCross.UWP
 
             if ( Control != null )
             {
-                Control.Text = RemoveHtmlTags(Control.Text);
+                Control.Text = RemoveHtmlTags( Control.Text );
             }
 
         }
 
         public string RemoveHtmlTags( string html )
         {
-            return Regex.Replace( html, "<.+?>", string.Empty );
+            return Regex.Replace( html, "<.+?>", string.Empty);
+
+            //return Regex.Replace( html, "<.+?>", string.Empty );
 
             //return Regex.Replace(html, "<[^>]+>", string.Empty);
         }

@@ -81,7 +81,7 @@ namespace d24amCross.ViewModel
 
         public ICommand ReloadCommand { get; set; }
 
-        private AmazoniaViewModel()
+        public AmazoniaViewModel()
         {
             TitlePage = "D24am Feed";
 
@@ -107,13 +107,10 @@ namespace d24amCross.ViewModel
             {
                 try
                 {
-                    this.Visibility = true;
 
                     var item = await controle.BaixarFeed( "http://new.d24am.com/rss?section=6" );
 
                     Lista = item;
-
-                    this.Visibility = false;
 
                 }
                 catch ( Exception )
